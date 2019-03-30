@@ -1,0 +1,27 @@
+Task:
+    Description
+    Name
+    Number of Volunteers needed
+    Turned in
+    Date
+    Location
+    Time
+    Type
+    NSS Hours
+    FK:Person ID
+    FK: NGO
+
+NGO: 
+    Name
+    About
+    Location
+    FK: Task ID
+
+Person:
+    ID
+    Name
+    Institute
+    Total NSS Hours
+    FK: TaskID
+
+    
