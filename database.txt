@@ -1,20 +1,21 @@
 Task:
-    Description
-    Name
-    Number of Volunteers needed
-    Turned in
-    Date
-    Location
-    Time
-    Type
-    NSS Hours
+    tid pk
+    desc:Description
+    tname: Name
+    nov: Number of Volunteers needed
+    tin:Turned in
+    date:Date
+    loc:Location
+    time:Time
+    type:Type
+    hr:NSS Hours
+    nid: INT
     
 
 Task-Person:
     tid-pid
 
-NGO-task:
-    nid-tid
+
 
 NGO: 
     Name
