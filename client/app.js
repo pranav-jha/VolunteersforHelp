@@ -2,13 +2,20 @@ var myApp = angular.module('myApp',['ngRoute']);
 
 myApp.config(function($routeProvider){
 	$routeProvider.when('/', {
-		controller:'TasksController',
-		templateUrl: 'views/tasks.html'
+		controller:'NGOsController',
+		templateUrl: 'views/ngos.html'
 	})
+	.when('/ngos/details/:id',{
+		controller:'NGOsController',
+		templateUrl: 'views/ngo_details.html'
+	})
+	
+
 	.when('/tasks', {
 		controller:'TasksController',
 		templateUrl: 'views/tasks.html'
 	})
+	
 	.when('/tasks/add',{
 		controller:'TasksController',
 		templateUrl: 'views/add_task.html'

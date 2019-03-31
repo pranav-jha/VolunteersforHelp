@@ -8,10 +8,13 @@ myApp.controller('NGOsController', ['$scope', '$http', '$location', '$routeParam
 			$scope.ngos = response;
 		});
 	}
-    $scope.getNGO = function(){
+  $scope.getNGO = function(){
 		var id = $routeParams.id;
 		$http.get('/api/ngos/'+id).success(function(response){
 			$scope.ngo = response;
+		});
+		$http.get('/api/tasks/'+id).success(function(response2){
+			$scope.tasks = response2;
 		});
 	}
 

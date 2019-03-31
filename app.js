@@ -24,7 +24,16 @@ db.connect((err) => {
 
 
 app.get('/api/tasks', (req, res) => {
-    db.query('SELECT * FROM task', (err, rows, fields) => {
+    db.query('SELECT * FROM tasks', (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
+});
+app.get('/api/tasks/:_id', (req, res) => {
+    var id = req.params._id;
+    db.query(`SELECT * FROM tasks where nid = ${id}`, (err, rows, fields) => {
         if (!err)
             res.send(rows);
         else
@@ -33,6 +42,15 @@ app.get('/api/tasks', (req, res) => {
 });
 app.get('/api/ngos', (req, res) => {
     db.query('SELECT * FROM ngo', (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
+});
+app.get('/api/ngos/:_id', (req, res) => {
+    var id = req.params._id;
+    db.query(`SELECT * FROM ngo where nid = ${id}`, (err, rows, fields) => {
         if (!err)
             res.send(rows);
         else

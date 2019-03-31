@@ -7,10 +7,11 @@
           <div ng-repeat="ngo in ngos">
               <div class="col-md-6">
                   <div class="col-md-6">
-                      <h4>{{ngo.nname}}</h4>
+                      <h3>{{ngo.name}}</h3>
                       <p>{{ngo.about}}</p>
+                      <p>Tasks pending: {{ngo.ntasks}}</p>
                       <a class="btn btn-primary" href="#/ngos/details/{{ngo._id}}">View Details</a>
-                      <h2>Number of Tasks: {{ngo.ntasks}}</h2>
+                      
                   </div>
                   
               </div>
