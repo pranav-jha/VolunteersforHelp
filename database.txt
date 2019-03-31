@@ -1,0 +1,37 @@
+Task:
+    tid pk
+    desc:Description
+    tname: Name
+    nov: Number of Volunteers needed
+    tin:Turned in
+    date:Date
+    loc:Location
+    time:Time
+    type:Type
+    hr:NSS Hours
+    nid: INT
+    
+
+Task-Person:
+    tid-pid
+
+
+
+NGO: 
+    Name
+    About
+    Location
+    FK: Task ID
+
+Person:
+    ID:
+    Name:
+    Institute
+    Total NSS Hours
+    FK: TaskID
+
+Login:
+    ID:
+    Password:
+
+    
