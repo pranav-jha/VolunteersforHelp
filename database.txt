@@ -8,8 +8,13 @@ Task:
     Time
     Type
     NSS Hours
-    FK:Person ID
-    FK: NGO
+    
+
+Task-Person:
+    tid-pid
+
+NGO-task:
+    nid-tid
 
 NGO: 
     Name
@@ -18,10 +23,14 @@ NGO:
     FK: Task ID
 
 Person:
-    ID
-    Name
+    ID:
+    Name:
     Institute
     Total NSS Hours
     FK: TaskID
+
+Login:
+    ID:
+    Password:
 
     
