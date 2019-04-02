@@ -6,7 +6,7 @@ myApp.controller('NGOsController', ['$scope', '$http', '$location', '$routeParam
 	$scope.getNGOs = function(){
 		$http.get('/api/ngos').success(function(response){
 			console.log(response);
-			$scope.ngos = response;
+			$scope.ngos = response; 
 		});
 	}
   $scope.getNGO = function(){
@@ -23,7 +23,7 @@ myApp.controller('NGOsController', ['$scope', '$http', '$location', '$routeParam
 	$scope.addNGO = function(){
 		console.log($scope.ngo);
 		$http.post('/api/ngos/', $scope.ngo).success(function(response){
-			window.location.href='# /ngos';
+			window.location.href='#/ngos';
 		});
 	}
 
