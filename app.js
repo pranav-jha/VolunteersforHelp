@@ -31,9 +31,18 @@ app.get('/api/tasks', (req, res) => {
             console.log(err);
     })
 });
-app.get('/api/tasks/:_id', (req, res) => {
+app.get('/api/ngotasks/:_id', (req, res) => {
     var id = req.params._id;
     db.query(`SELECT * FROM tasks where nid = ${id}`, (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
+});
+app.get('/api/tasks/:_id', (req, res) => {
+    var id = req.params._id;
+    db.query(`SELECT * FROM tasks where tid = ${id}`, (err, rows, fields) => {
         if (!err)
             res.send(rows);
         else
@@ -57,6 +66,7 @@ app.get('/api/ngos/:_id', (req, res) => {
             console.log(err);
     })
 });
+
 
 
 app.listen('3000', () => {

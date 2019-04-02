@@ -10,8 +10,10 @@ myApp.controller('TasksController', ['$scope', '$http', '$location', '$routePara
 	}
 	$scope.getTask = function(){
 		var id = $routeParams.id;
+		
 		$http.get('/api/tasks/'+id).success(function(response){
-			$scope.task = response;
+			$scope.task = response[0];
+			console.log(response)
 		});
 	}
 

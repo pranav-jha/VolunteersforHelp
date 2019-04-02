@@ -9,7 +9,10 @@ myApp.config(function($routeProvider){
 		controller:'NGOsController',
 		templateUrl: 'views/ngo_details.html'
 	})
-	
+	.when('/tasks/details/:id',{
+		controller:'TasksController',
+		templateUrl: 'views/task_details.html'
+	})
 
 	.when('/tasks', {
 		controller:'TasksController',

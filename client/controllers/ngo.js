@@ -5,15 +5,17 @@ myApp.controller('NGOsController', ['$scope', '$http', '$location', '$routeParam
 
 	$scope.getNGOs = function(){
 		$http.get('/api/ngos').success(function(response){
+			console.log(response);
 			$scope.ngos = response;
 		});
 	}
   $scope.getNGO = function(){
 		var id = $routeParams.id;
+		
 		$http.get('/api/ngos/'+id).success(function(response){
-			$scope.ngo = response;
+			$scope.ngo = response[0];
 		});
-		$http.get('/api/tasks/'+id).success(function(response2){
+		$http.get('/api/ngotasks/'+id).success(function(response2){
 			$scope.tasks = response2;
 		});
 	}
