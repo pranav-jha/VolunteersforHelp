@@ -67,9 +67,54 @@ app.post('/api/ngos', (req, res) => {
         res.send('Post added...');
     });
 });
+
+app.post('/api/tasks', (req, res) => {
+    var data1 = req.body;
+    console.log(data1);
+    let sql = `INSERT INTO tasks SET tname="${data1.tname}",description="${data1.description}",nid=${data1.nid}; `;
+    let query = db.query(sql, (err, result) => {
+        if(err) throw err;
+        console.log(result);
+        res.send('Post added...');
+    });
+});
+app.put('/api/tasks/:_id', (req, res) => {
+    var id = req.params._id;
+    var data1 = req.body;
+    console.log(data1);
+    let sql = `UPDATE tasks SET tname="${data1.tname}",loc="${data1.loc}",description="${data1.description}",nid=${data1.nid},nov=${data1.nov},hr=${data1.hr},type="${data1.type}" where tid=${id}; `;
+    let query = db.query(sql, (err, result) => {
+        if(err) throw err;
+        console.log(result);
+        res.send('Post added...');
+    });
+});
+
+
+
 app.get('/api/ngos/:_id', (req, res) => {
     var id = req.params._id;
     db.query(`SELECT * FROM ngo where nid = ${id}`, (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
+});
+
+app.delete('/api/ngo/:id', (req, res) => {
+	var id = req.params.id;
+	db.query(`DELETE FROM ngo where nid = ${id}`, (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
+});
+
+app.delete('/api/tasks/:_id', (req, res) => {
+	var id = req.params._id;
+	db.query(`DELETE FROM tasks where tid = ${id}`, (err, rows, fields) => {
         if (!err)
             res.send(rows);
         else

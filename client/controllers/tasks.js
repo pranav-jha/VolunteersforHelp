@@ -26,14 +26,19 @@ myApp.controller('TasksController', ['$scope', '$http', '$location', '$routePara
 
 	$scope.updateTask = function(){
 		var id = $routeParams.id;
+		console.log("ID:"+id);
 		$http.put('/api/tasks/'+id, $scope.task).success(function(response){
-			window.location.href='#/tasks';
+			console.log(response);
+			window.location.href='#/';
 		});
 	}
 
-	$scope.removeTask = function(id){
-		$http.delete('/api/tasks/'+id).success(function(response){
-			window.location.href='#/tasks';
+	$scope.removeTask = function(nid,tid){
+		
+		
+		$http.delete('/api/tasks/'+tid).success(function(response){
+			
+			window.location.href='#/ngos/details/'+nid;
 		});
 	}
 	

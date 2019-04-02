@@ -34,10 +34,17 @@ myApp.controller('NGOsController', ['$scope', '$http', '$location', '$routeParam
 		});
 	}
 
+
 	$scope.removeNGO = function(id){
 		$http.delete('/api/ngos/'+id).success(function(response){
 			window.location.href='#/ngos';
 		});
 	}
-	
+	$scope.addTask = function(){
+		console.log($scope.task);
+		$http.post('/api/tasks/', $scope.task).success(function(response){
+			window.location.href='#/ngos/'+$scope.task.nid;
+		});
+	}
+
 }]);

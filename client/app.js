@@ -13,7 +13,10 @@ myApp.config(function($routeProvider){
 		controller:'TasksController',
 		templateUrl: 'views/task_details.html'
 	})
-
+    .when('/tasks/edit/:id',{
+		controller:'TasksController',
+		templateUrl: 'views/edit_task.html'
+	})
 	.when('/tasks', {
 		controller:'TasksController',
 		templateUrl: 'views/tasks.html'
@@ -23,6 +26,8 @@ myApp.config(function($routeProvider){
 		controller:'TasksController',
 		templateUrl: 'views/add_task.html'
 	})
+	
+	
 	.when('/ngos', {
 		controller:'NGOsController',
 		templateUrl: 'views/ngos.html'
